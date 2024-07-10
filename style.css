@@ -1,0 +1,273 @@
+@import url(https://fonts.bunny.net/css?family=aref-ruqaa:400|asar:400|devonshire:400);
+
+/* CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    height: 100%;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+#root, #__next {
+    isolation: isolate;
+}
+
+/* My CSS */
+:root {
+    --grey: #e2e8f0;
+
+    --dark-color: #A79277;
+    --mid-color: #D1BB9E;
+    --light-color: #FFF2E1;
+
+    --altlight-color: #EAD8C0;
+    --altmid-color: #34d399;
+    --altdark-color: #8d7c66;
+
+    --darkest-color: #554b3f;
+    --highlight-color: #fbbf24;
+    --close-button: #741d0d;
+    --close-highlight: #ca3419;
+}
+
+body {
+    background-color: var(--light-color);
+    font-family: 'Asar', serif;
+}
+
+h1 {
+    font-family: 'Devonshire', handwriting;
+    font-weight: 400;
+    text-align: center;
+    font-size: 4rem;
+
+    padding: 5px;
+    text-shadow: 2px 1px 2px var(--darkest-color);
+    color: var(--light-color);
+}
+
+button {
+    background-color: var(--dark-color);
+    border: 0px;
+    color: var(--light-color);
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+button:hover {
+    background-color: var(--altdark-color);
+    color: var(--altlight-color);
+    cursor: pointer;
+}
+
+legend {
+    font-family: 'Aref Ruqaa', serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 2px var(--dark-color);
+}
+
+input[type=text],
+input[type=number] {
+    border: 0px;
+    border-radius: 3px;
+    background-color: var(--light-color);
+}
+
+input[type=text]:focus,
+input[type=number]:focus {
+    border: 0px;
+    outline: 2px solid var(--highlight-color);
+}
+
+#addBook {
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.close {
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 85%;
+
+    border: 0px;
+    border-radius: 50%;
+    background-color: var(--close-button);
+}
+.close:hover {
+    background-color: var(--close-highlight);
+}
+
+#headerBox {
+    border-bottom: 3px solid var(--darkest-color);
+    background-color: var(--altdark-color);
+    box-shadow: 0px 5px 5px var(--altdark-color);
+}
+#entireContainer {
+    display: flex;
+    flex-direction: row;
+}
+#main {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--dark-color);
+    outline: 3px solid var(--darkest-color);
+
+    height: 100vh;
+    width: 13vw;
+    min-width: 210px;
+}
+#menu {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    margin-top: 30px;
+
+    gap: 10px;
+    width: 100%;
+}
+#menu > button {
+    display: block;
+    width: 100%;
+    font-weight: 550;
+    background-color: var(--altdark-color);
+}
+#menu > button:hover {
+    font-size: 1.3rem;
+    background-color: var(--darkest-color);
+}
+#library {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-top: 25px;
+    padding: 30px;
+    width: 80%;
+    margin: auto;
+
+    gap: 10px;
+    justify-content: space-around;
+    align-content: center;
+}
+.book {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--mid-color);
+    position: relative;
+
+    width: 10cqw;
+    min-width: 150px;
+    height: 250px;
+    min-height: 100px;
+
+    border-radius: 3px;
+    border-left: 10px solid var(--altdark-color);
+    box-shadow: 3px 3px 5px var(--altdark-color);
+    outline: 2px solid var(--altdark-color);
+    outline-offset: -1px;
+
+    padding: 10px;
+}
+.book:hover {
+    border-right: 5px solid #e6dbcc;
+    border-left: 8px solid var(--altdark-color);
+    cursor: pointer;
+}
+.title {
+    font-family: 'Aref Ruqaa', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.author {
+    padding-top: 5px;
+    font-style: italic;
+    font-size: 1rem;
+}
+.desc {
+    font-size: 0.9rem;
+}
+.pgNum {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+.unreadFlag {
+    position: absolute;
+    top: 1px;
+    right: 5px;
+    height: 20px;
+    background-color: var(--highlight-color);
+    padding: 5px;
+
+    text-orientation: mixed;
+    writing-mode: vertical-rl;
+    overflow: hidden;
+    font-size: 0.8rem;
+
+    box-shadow: 1px 1px 3px var(--altdark-color);
+}
+.unreadFlag:hover {
+    height: auto;
+    padding: 5px;
+}
+#remove {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--close-button);
+    box-shadow: 1px 1px 3px var(--altdark-color);
+}
+#remove:hover {
+    background-color: var(--close-highlight);
+}
+
+/* Modal styles */
+::backdrop {
+    backdrop-filter: blur(15px);
+    opacity: 0.9;
+}
+
+dialog {
+    animation: slide-in 0.5s ease-out;
+    margin: auto;
+
+    border: 0px;
+    outline: 2px solid var(--altdark-color);
+    border-left: 8px solid var(--altdark-color);
+    border-radius: 3px;
+    background-color: var(--altlight-color);
+    width: 325px;
+
+    padding: 10px;
+}
+
+dialog[open] {
+    animation: slide-in 0.5s ease-out;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(calc(100vh - 100%));
+    }
+}
+
+@keyframes slide-out {
+    100% {
+        transform: translateY(calc(100vh - 100%));
+    }
+}
